@@ -113,3 +113,16 @@ A. 右図
 Q. サイズ6×6の入力画像を、サイズ2×2のフィルタで畳み込んだ時の出力画像のサイズを答えよ。なおストライドとパディングは1とする。  
 A. 7×7
 
+***
+
+## ステージテスト3の復習
+
+* Q. 正規化線形カーネル<img src="https://latex.codecogs.com/png.latex?\inline&space;{\color{White}&space;k(x^{T},x)=\frac{x^{T}x^{'}}{||x||&space;\,&space;||x^{'}||}}" title="{\color{White} k(x^{T},x)=\frac{x^{T}x^{'}}{||x|| \, ||x^{'}||}}" />|に対応するA. 特徴ベクトルφ(x)はどう表せるか。  
+<br>
+(𝒙,𝒙′)=𝝓(𝒙)𝑻𝝓(𝒙)で定義され，  
+<img src="https://latex.codecogs.com/png.latex?\inline&space;{\color{White}&space;\frac{x^{T}x^{'}}{\left&space;\|&space;x&space;\right&space;\|\left&space;\|&space;x^{'}&space;\right&space;\|}=(\frac{x}{\left&space;\|&space;x&space;\right&space;\|}&space;)^{T}(\frac{x^{'}}{\left&space;\|&space;x&space;\right&space;\|})}" title="{\color{White} \frac{x^{T}x^{'}}{\left \| x \right \|\left \| x^{'} \right \|}=(\frac{x}{\left \| x \right \|} )^{T}(\frac{x^{'}}{\left \| x \right \|})}" />なので、<img src="https://latex.codecogs.com/png.latex?\inline&space;{\color{White}&space;\phi&space;(x)=\frac{x}{\left&space;\|&space;x&space;\right&space;\|}}" title="{\color{White} \phi (x)=\frac{x}{\left \| x \right \|}}" />
+
+* Q. 2次元空間において「(-1, -1), (0, 0), (1, 1)」という3つデータ点が与えられ，これらのデータに対して主成分分析を適用する。問題前の問題で１次元空間に射影されたデータを元の２次元空間に再構成すると、再構成誤差（元のデータと再構成したデータとの誤差）は何%か。  
+<br>
+A. データ点は一直線上にあるので、第1主成分に射影しても情報は損失しないので、再構成によって完全にもとの情報を復元できる。つまり再構成誤差は0%である。
+
