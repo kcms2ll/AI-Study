@@ -126,6 +126,6 @@ Q. 誤差逆伝播法では不要な再帰的処理を避ける事が出来る�
 Q. 2つの空欄に該当するソースコードを探せ。  
 A. delta2 = functions.d_mean_squared_error(d, y)  
 A. grad['W2'] = np.dot(z1.T, delta2)  
-
+<br>
 * [ニューラルネットワークの実装](https://github.com/kcms2ll/AI-Study/blob/main/ETest/src/neural_network.ipynb)  
 ※順伝播、活性化関数、出力層、勾配降下法、誤差逆伝播法について

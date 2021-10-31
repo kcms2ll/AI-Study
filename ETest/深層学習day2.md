@@ -47,6 +47,8 @@ Q. 一般的に考えられるバッチ正規化の効果を2点挙げよ。
 A. ①中間層の重みの更新が安定し、早く学習が進み、時間短縮される。  
 A. ②ミニバッチ単位で正則化を行うので、学習データのばらつきを抑制し、過学習を防ぐ。  
 
+* [勾配消失問題対策の実装](https://github.com/kcms2ll/AI-Study/blob/main/ETest/src/vanishing_gradient.ipynb)
+
 ## 2.学習率最適化手法  
 深層学習の最終目標は、誤差を最小にするネットワークを作成することである。つまり、誤差E(w)を最小化するパラメータwを探すことである。そして、そのwを見つける方法に勾配降下法を用いたパラメータの最適化が挙げられる。  
 この勾配降下法には学習率というものがあるが、それが最適な値でないと、学習に時間がかかったり、最適解に辿り着けないということが起こる。これらを解消する方法が4つほど存在する。  
@@ -67,13 +69,13 @@ A. ②ミニバッチ単位で正則化を行うので、学習データのば�
 * 確認テスト  
 Q. モメンタム・AdaGrad・RMSPropの特徴をそれぞれ簡潔に説明せよ。  
 A. モメンタム  
-局所的最適解にはならず、大域的最適解になる。谷間についてから最も低い位置（最適値）に行くまでの時間が短い。
-<br>
+局所的最適解にはならず、大域的最適解になる。谷間についてから最も低い位置（最適値）に行くまでの時間が短い。  
 A. AdaGrad  
-勾配の緩やかな斜面に対して、最適値に近づける。
-<br>
+勾配の緩やかな斜面に対して、最適値に近づける。  
 A. RMSProp  
 局所的最適解にはならず、大域的最適解となる。ハイパーパラメータの調整が必要な場合が少ない。
+
+* [学習率最適化手法の実装](https://github.com/kcms2ll/AI-Study/blob/main/ETest/src/optimizer.ipynb)
 
 ## 3.過学習
 モデルを作成し、訓練データは正しく認識できるが、テストデータに対し、うまく認識できないということを過学習という。発生要因としては、パラメータの数が多かったり、パラメータの値が適切でなかったり等がある。また、ネットワークの自由度が高い状態にあることも要因のひとつである。
@@ -90,6 +92,8 @@ A. RMSProp
 * 確認テスト  
 Q. 下図について、L1正則化を表しているグラフはどちらか答えよ。
 A. 右図
+
+* [過学習対策の実装](https://github.com/kcms2ll/AI-Study/blob/main/ETest/src/overfitting.ipynb)
 
 ## 畳み込みニューラルネットワーク(CNN)
 次元間で繋がりのあるデータを扱える。
@@ -113,6 +117,8 @@ A. 右図
 Q. サイズ6×6の入力画像を、サイズ2×2のフィルタで畳み込んだ時の出力画像のサイズを答えよ。なおストライドとパディングは1とする。  
 A. 7×7
 
+* [CNNの実装](https://github.com/kcms2ll/AI-Study/blob/main/ETest/src/convolutional_neural_network.ipynb)
+
 ***
 
 ## ステージテスト3の復習
@@ -122,7 +128,6 @@ A. 7×7
 (𝒙,𝒙′)=𝝓(𝒙)𝑻𝝓(𝒙)で定義され，  
 <img src="https://latex.codecogs.com/png.latex?\inline&space;{\color{White}&space;\frac{x^{T}x^{'}}{\left&space;\|&space;x&space;\right&space;\|\left&space;\|&space;x^{'}&space;\right&space;\|}=(\frac{x}{\left&space;\|&space;x&space;\right&space;\|}&space;)^{T}(\frac{x^{'}}{\left&space;\|&space;x&space;\right&space;\|})}" title="{\color{White} \frac{x^{T}x^{'}}{\left \| x \right \|\left \| x^{'} \right \|}=(\frac{x}{\left \| x \right \|} )^{T}(\frac{x^{'}}{\left \| x \right \|})}" />なので、<img src="https://latex.codecogs.com/png.latex?\inline&space;{\color{White}&space;\phi&space;(x)=\frac{x}{\left&space;\|&space;x&space;\right&space;\|}}" title="{\color{White} \phi (x)=\frac{x}{\left \| x \right \|}}" />
 
-* Q. 2次元空間において「(-1, -1), (0, 0), (1, 1)」という3つデータ点が与えられ，これらのデータに対して主成分分析を適用する。問題前の問題で１次元空間に射影されたデータを元の２次元空間に再構成すると、再構成誤差（元のデータと再構成したデータとの誤差）は何%か。  
-<br>
+* Q. 2次元空間において「(-1, -1), (0, 0), (1, 1)」という3つデータ点が与えられ，これらのデータに対して主成分分析を適用する。問題前の問題で１次元空間に射影されたデータを元の2次元空間に再構成すると、再構成誤差（元のデータと再構成したデータとの誤差）は何%か。  
 A. データ点は一直線上にあるので、第1主成分に射影しても情報は損失しないので、再構成によって完全にもとの情報を復元できる。つまり再構成誤差は0%である。
 
