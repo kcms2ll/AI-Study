@@ -39,8 +39,6 @@ A.
 <img src="https://latex.codecogs.com/png.latex?{\color{White}&space;y_{1}=&space;g\left&space;(&space;W_{out}S_{1}&space;&plus;&space;c&space;\right&space;)}" title="{\color{White} y_{1}= g\left ( W_{out}S_{1} + c \right )}" />  
 ただし、<img src="https://latex.codecogs.com/png.latex?{\color{White}&space;\left&space;(S_{1}&space;=&space;W_{in}x_{1}&space;&plus;&space;WS_{0}&space;&plus;&space;b&space;\right&space;)}" title="{\color{White} \left (S_{1} = W_{in}x_{1} + WS_{0} + b \right )}" />  
 
-* [RNNの実装]()
-
 ### LSTM
 RNNは時系列データを遡れば遡るほど、勾配が消失していく（勾配消失問題）。この問題を構造的に変えて、解決したものをLSTMという。  
 
@@ -73,9 +71,7 @@ A. 忘却ゲート
 
 * 覗き穴結合  
 これまでの課題として、CECの保存されている過去の情報を、任意のタイミングで他のノードに伝播させたり、あるいは任意のタイミングで忘却させたいというものがあった。CEC自身の値は、ゲート制御に影響を与えてない。  
-覗き穴結合は、CECは自身の値に重み行列を介して伝播可能にした構造となっている。が…実際に期待した効果は得られなかった。  
-
-* [LSTMの実装]()
+覗き穴結合は、CECは自身の値に重み行列を介して伝播可能にした構造となっている。が…実際に期待した効果は得られなかった。
 
 ### GRU
 従来のLSTMではパラメータが多数存在し、計算負荷が大きかった。それを解決するため、パタメータを大幅に削減し、精度は同等かそれ以上を期待でいる構造をもつもの。
@@ -85,14 +81,10 @@ Q. LSTMとCECが抱える課題について、それぞれ簡潔に述べよ。
 A. LSTMは構造的にパラメータ数が多く、計算負荷がかかる。  
 A. CECは、勾配が1で学習能力がない。  
 Q. LSTMとGRUのち外を簡潔に述べよ。  
-A. LSTMには入力ゲート、出力ゲート、CECの3つの構造があり、パラメータ数が多いため計算負荷が大きいが、GRUにはリセットゲートと更新ゲートの2つの構造で、パラメータ数が少なく計算負荷が小さい。  
-
-* [GRUの実装]()
+A. LSTMには入力ゲート、出力ゲート、CECの3つの構造があり、パラメータ数が多いため計算負荷が大きいが、GRUにはリセットゲートと更新ゲートの2つの構造で、パラメータ数が少なく計算負荷が小さい。
 
 ### 双方向RNN
 過去の情報だけでなく、未来の情報を加味することで、精度を向上させるためのモデル
-
-* [双方向RNNの実装]()
 
 ## RNNでの自然言語処理
 ### Seq2Seq  
@@ -114,8 +106,6 @@ A. (2)
 
 * seq2seqの課題  
 文脈が無視され、ただ返答が行われる。
-
-* [Seq2Seqの実装]()
 
 ### HRED
 Seq2Seqの一問一答しかできない問題を解決するためのもの。過去の発話から次の発話を生成する。前の単語の流れに即して返答することで人間らしい文脈で文章が生成される。
@@ -146,8 +136,6 @@ A. 確率分布
 ### Word2vec
 RNNの課題である単語のような可変長の文字列をNNに与えることができないという問題を解決する方法。固定長形式で単語を表せるようにした。学習データからボキャブラリを作成し、最終的にembeddingベクトルを作成する。
 
-* [Word2vecの実装]()
-
 ### Attension Mechanism
 seq2se2の長い文章への対応が難しい問題を解決する方法。2単語でも100単語でも同じベクトル内に表現しなければならないという固定次元ベクトルを文章が長くなるほどに、シーケンスの内部表現の次元も大きくなっていくという仕組みで解消した。
 
@@ -156,4 +144,7 @@ Q. RNNとword2vec、seq2seqとAttentionの違いを簡潔に述べよ。
 A. RNNは時系列データを処理するのに適したネットワーク。word2vecは単語の分散表現p￥ベクトルを得る表現。
 一つの時系列データから別の時系列データを得るネットワーク。Attensionは時系列データの中身に関して、それぞれの関連性に重みをつける手法。
 
-* [Attension Mechanismの実装]()
+## 実装演習
+* [RNNによるバイナリ加算](https://github.com/kcms2ll/AI-Study/blob/main/ETest/src/RNN.ipynb)
+* [RNNによるsin波予測](https://github.com/kcms2ll/AI-Study/blob/main/ETest/src/predict_sin.ipynb)
+* [RNNによる言葉予測](https://colab.research.google.com/drive/16pqSJk95JYDAg6mqnr_YKB7qSNAAbNBg#scrollTo=A2myuvM7_2z-)
