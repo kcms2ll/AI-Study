@@ -147,4 +147,4 @@ A. RNNは時系列データを処理するのに適したネットワーク。wo
 ## 実装演習
 * [RNNによるバイナリ加算](https://github.com/kcms2ll/AI-Study/blob/main/ETest/src/RNN.ipynb)
 * [RNNによるsin波予測](https://github.com/kcms2ll/AI-Study/blob/main/ETest/src/predict_sin.ipynb)
-* [RNNによる言葉予測](https://colab.research.google.com/drive/16pqSJk95JYDAg6mqnr_YKB7qSNAAbNBg#scrollTo=A2myuvM7_2z-)
+* [RNNによる言葉予測](https://github.com/kcms2ll/AI-Study/blob/main/ETest/src/predict_word.ipynb)
